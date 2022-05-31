@@ -3,14 +3,16 @@ final int GAME=1;
 final int GAMEOVER=2;
 final int PAUSE=3; 
 final int OPTIONS=4;
-boolean wkey, skey, upkey, downkey;
+boolean wkey, skey, upkey, downkey,spacekey;
 
 int mode;
 ArrayList<AR> stars;
+Starfighter player1;
 void setup() {
   size(displayWidth, displayHeight); 
   mode=GAME;
   stars=new ArrayList<AR>();
+  player1=new Starfighter();
 }
 void draw() {
  

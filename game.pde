@@ -1,6 +1,6 @@
 
 void game() {
-   
+
   stars.add(new AR());
   int i=0;
   while (i<stars.size()) {
@@ -13,6 +13,9 @@ void game() {
       i++;
     }
   }
+  player1.show();
+  player1.act();
+  
   fill(225);
   text(frameRate, 20, 20);
   text(stars.size(), 20, 40);
