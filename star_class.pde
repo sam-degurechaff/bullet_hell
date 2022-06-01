@@ -1,4 +1,4 @@
-class AR {
+class AR extends GameObject{
   //instant v
   float x, y, vx, vy, size;
   color c;
@@ -17,9 +17,8 @@ class AR {
 
   //beheave
   void act() {
-    x=x+vx;
-    y=y+vy;
-    if(y>height)lives=0;
+    super.act();
+    if(y>displayHeight)lives=0;
   }
   void show() {
     fill(c);

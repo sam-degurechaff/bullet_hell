@@ -1,14 +1,14 @@
 
 void game() {
 
-  stars.add(new AR());
+  objects.add(new AR());
   int i=0;
-  while (i<stars.size()) {
-    AR s=stars.get(i);
+  while (i<objects.size()) {
+    GameObject s=objects.get(i);
     s.act();
     s.show();
     if (s.lives==0) {
-      stars.remove(i);
+      objects.remove(i);
     } else {
       i++;
     }
@@ -18,7 +18,7 @@ void game() {
   
   fill(225);
   text(frameRate, 20, 20);
-  text(stars.size(), 20, 40);
+  text(objects.size(), 20, 40);
 }
 void gameClicks() {
 }

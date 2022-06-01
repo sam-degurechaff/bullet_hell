@@ -6,12 +6,12 @@ final int OPTIONS=4;
 boolean wkey, skey, upkey, downkey,spacekey;
 
 int mode;
-ArrayList<AR> stars;
+ArrayList<GameObject> objects;
 Starfighter player1;
 void setup() {
   size(displayWidth, displayHeight); 
   mode=GAME;
-  stars=new ArrayList<AR>();
+  objects=new ArrayList<GameObject>();
   player1=new Starfighter();
 }
 void draw() {

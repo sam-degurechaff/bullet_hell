@@ -1,4 +1,4 @@
-class Starfighter {
+class Starfighter extends GameObject{
   float x, y, vx, vy, size;
   //boolean up,down,left,right;
   color c;
@@ -21,8 +21,7 @@ class Starfighter {
     if (!upkey&&!downkey)vy=vy*0.9;
     if (!wkey&&!skey)vx=vx*.9;
 
-    x=x+vx;
-    y=y+vy;
+    super.act();
   }
   void show() {
     fill(c);
