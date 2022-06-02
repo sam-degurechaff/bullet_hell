@@ -3,7 +3,7 @@ final int GAME=1;
 final int GAMEOVER=2;
 final int PAUSE=3; 
 final int OPTIONS=4;
-boolean wkey, skey, upkey, downkey,spacekey;
+boolean wkey, skey, akey, dkey,spacekey;
 
 int mode;
 ArrayList<GameObject> objects;
@@ -13,6 +13,7 @@ void setup() {
   mode=GAME;
   objects=new ArrayList<GameObject>();
   player1=new Starfighter();
+  rectMode(CENTER);
 }
 void draw() {
  

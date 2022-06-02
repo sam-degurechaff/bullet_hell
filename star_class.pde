@@ -1,8 +1,5 @@
-class AR extends GameObject{
+class AR extends GameObject {
   //instant v
-  float x, y, vx, vy, size;
-  color c;
-  int lives;
 
   //construct
   AR() {
@@ -18,11 +15,10 @@ class AR extends GameObject{
   //beheave
   void act() {
     super.act();
-    if(y>displayHeight)lives=0;
+    if (y>displayHeight)lives=0;
   }
   void show() {
     fill(c);
     square(x, y, size);
   }
-  
 }
