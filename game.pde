@@ -2,6 +2,7 @@
 void game() {
 
   objects.add(new AR());
+  objects.add(new eneimy());
   int i=0;
   while (i<objects.size()) {
     GameObject s=objects.get(i);

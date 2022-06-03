@@ -1,29 +1,32 @@
-class Starfighter extends GameObject{
-  
+class Starfighter extends GameObject {
 
+  int cooldown, threshold;
   Starfighter() {
-    x=width/2;
-    y=height/2;
-    vx=0;
-    vy=0;
-    size=40;
-    c=#FF0000;
-    lives=3;
+    super(width/2, height/2, 0, 0, 40, #FF0000, 3);
+    threshold=8;
+    cooldown=threshold;
   }
   void act() {
+    //control
     if (wkey)vy=-5;
     if (skey)vy=5;
     if (akey)vx=-5;
     if (dkey) vx=5;
-    if(spacekey) objects.add(new bullet());
-    
+
+
     if (!akey && !dkey)vx=vx*0.9;
     if (!wkey && !skey)vy=vy*.9;
 
-    super.act();
+    //on board weaponds
+    cooldown++;
+    if (spacekey&&cooldown>=threshold) { 
+      objects.add(new bullet());
+      cooldown=0;
+    }
+      super.act();
+    }
+    void show() {
+      fill(c);
+      square(x, y, size);
+    }
   }
-  void show() {
-    fill(c);
-    square(x, y, size);
-  }
-}

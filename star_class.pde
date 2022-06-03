@@ -3,13 +3,8 @@ class AR extends GameObject {
 
   //construct
   AR() {
-    x= random(0, width);
-    y=0;
-    vx=0;
-    size=random(1, 5);
+    super( random(0, width), 0, 0, 0, random(1, 5), #FFFFFF, 1);
     vy=size;
-    c=#FFFFFF;
-    lives=1;
   }
 
   //beheave

@@ -1,13 +1,7 @@
 class bullet extends GameObject {
 
-  bullet() {
-    x=player1.x;
-    y=player1.y;
-    vx=0;
-    vy=-10;
-    size=5;
-    c=#FF0000;
-    lives=1;
+  bullet() {super(player1.x,player1.y,0,-10,5,#FF0000,1);
+  
   }
   void act() {
     super.act();

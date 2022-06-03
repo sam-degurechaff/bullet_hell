@@ -3,7 +3,12 @@ final int GAME=1;
 final int GAMEOVER=2;
 final int PAUSE=3; 
 final int OPTIONS=4;
-boolean wkey, skey, akey, dkey,spacekey;
+boolean wkey, skey, akey, dkey, spacekey;
+
+color red=#e63946;
+color dblue=#1d3557;
+color blue=#f1faee;
+color yellow=#fdca40;
 
 int mode;
 ArrayList<GameObject> objects;
@@ -16,7 +21,7 @@ void setup() {
   rectMode(CENTER);
 }
 void draw() {
- 
+
   background(0);
 
   if (mode==INTRO) {
