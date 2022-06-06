@@ -3,7 +3,7 @@ class Starfighter extends GameObject {
   int cooldown, threshold;
   Starfighter() {
     super(width/2, height/2, 0, 0, 40, #FF0000, 3);
-    threshold=8;
+    threshold=6;
     cooldown=threshold;
   }
   void act() {

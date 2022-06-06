@@ -1,8 +1,18 @@
 
 void game() {
 
+  addObject();
+  gameEngine();
+  debug();
+}
+
+void addObject() {
   objects.add(new AR());
-  objects.add(new eneimy());
+  if (frameCount%5==0)
+    objects.add(new eneimy());
+}
+
+void gameEngine() {  
   int i=0;
   while (i<objects.size()) {
     GameObject s=objects.get(i);
@@ -16,7 +26,9 @@ void game() {
   }
   player1.show();
   player1.act();
-  
+}
+
+void debug() { 
   fill(225);
   text(frameRate, 20, 20);
   text(objects.size(), 20, 40);

@@ -4,8 +4,8 @@ void keyPressed() {
   if (key=='S'||key=='s')skey=true;
   if (key=='A'||key=='a')akey=true;
   if (key=='D'||key=='d')dkey=true;
-  if (keyCode==UP)akey=true;
-  if (keyCode==DOWN)dkey=true;
+ // if (keyCode==UP)akey=true;
+  //if (keyCode==DOWN)dkey=true;
   if(key==' ')spacekey=true;
 }
 void keyReleased() {
