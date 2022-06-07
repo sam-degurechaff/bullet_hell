@@ -1,11 +1,15 @@
 class eneimy extends GameObject {
   int cooldown, threshold;
+  
   eneimy() {
 
 
     super(random(width), 0, 0, 5, 40, yellow, 1);
+    float emx,emy;
+    emx=x;
+    emy=y;
 
-    threshold=8;
+    threshold=16;
     cooldown=threshold;
   }
   void act() {

@@ -20,13 +20,32 @@ class Starfighter extends GameObject {
     //on board weaponds
     cooldown++;
     if (spacekey&&cooldown>=threshold) { 
-      objects.add(new bullet());
+      objects.add(new bullet(0, -10));
       cooldown=0;
     }
-      super.act();
+    super.act();
+
+  
+
+    int i=0; 
+    while (i<objects.size()) {
+      GameObject obj=objects.get(i);
+      if (obj instanceof eniemyFire) {
+        if (collidingWith(obj)) {
+          lives--;
+        }
+      }
     }
-    void show() {
-      fill(c);
-      square(x, y, size);
-    }
+    float dist;
+    dist = dist(player.x,player.y,emy,emx);
+  if (dist<80)
+  objects.add(new bullet(0, -10));
+    objects.add(new bullet(0, 10));
+    objects.add(new bullet( 10, 0));
+    objects.add(new bullet(-10, 0)); ;
   }
+  void show() {
+    fill(c);
+    square(x, y, size);
+  }
+}
