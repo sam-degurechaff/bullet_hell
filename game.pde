@@ -1,9 +1,12 @@
 
 void game() {
 
+
+
   addObject();
   gameEngine();
   debug();
+  playSound();
 }
 
 void addObject() {
@@ -18,7 +21,7 @@ void gameEngine() {
     GameObject s=objects.get(i);
     s.act();
     s.show();
-    if (s.lives==0) {
+    if (s.lives <= 0) {
       objects.remove(i);
     } else {
       i++;
@@ -34,4 +37,11 @@ void debug() {
   text(objects.size(), 20, 40);
 }
 void gameClicks() {
+}
+
+void playSound() {
+
+   {
+    theme.play();
+  }
 }

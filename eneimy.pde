@@ -1,20 +1,21 @@
 class eneimy extends GameObject {
   int cooldown, threshold;
-  
+
   eneimy() {
 
 
     super(random(width), 0, 0, 5, 40, yellow, 1);
-    float emx,emy;
-    emx=x;
-    emy=y;
+
+
 
     threshold=16;
     cooldown=threshold;
   }
   void act() {
     super.act();
-
+    println(vx, vy);
+    emx=x;
+    emy=y;
     //fire
     cooldown++;
     if (cooldown>=threshold) { 
@@ -31,6 +32,7 @@ class eneimy extends GameObject {
       if (obj instanceof bullet) {
         if (collidingWith(obj)) {
           lives--;
+          obj.lives = 0;
         }
       }
       i++;

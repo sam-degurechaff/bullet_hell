@@ -25,24 +25,38 @@ class Starfighter extends GameObject {
     }
     super.act();
 
-  
+
 
     int i=0; 
     while (i<objects.size()) {
       GameObject obj=objects.get(i);
-      if (obj instanceof eniemyFire) {
+      if (obj instanceof eneimyFire) {
         if (collidingWith(obj)) {
           lives--;
         }
       }
+      i++;
     }
+
+    while (i<objects.size()) {
+      GameObject obj=objects.get(i);
+      if (obj instanceof bullet) {
+        if (collidingWith(obj)) {
+          lives--;
+          obj.lives = 0;
+        }
+        i++;
+      }
+    }
+
     float dist;
-    dist = dist(player.x,player.y,emy,emx);
-  if (dist<80)
-  objects.add(new bullet(0, -10));
-    objects.add(new bullet(0, 10));
-    objects.add(new bullet( 10, 0));
-    objects.add(new bullet(-10, 0)); ;
+    dist = dist(player1.x, player1.y, emy, emx);
+    if (dist<80) {
+      objects.add(new bullet(0, -10));
+      objects.add(new bullet(0, 10));
+      objects.add(new bullet( 10, 0));
+      objects.add(new bullet(-10, 0));
+    }
   }
   void show() {
     fill(c);

@@ -1,3 +1,15 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minim minim;
+AudioPlayer theme, gametheme, gametheme02, coin, bump, gameover, coin02;
+
+
+
 final int INTRO=0;
 final int GAME=1;
 final int GAMEOVER=2;
@@ -10,6 +22,8 @@ color dblue=#1d3557;
 color blue=#f1faee;
 color yellow=#fdca40;
 
+ float emx,emy;
+   
 int mode;
 ArrayList<GameObject> objects;
 Starfighter player1;
@@ -19,6 +33,8 @@ void setup() {
   objects=new ArrayList<GameObject>();
   player1=new Starfighter();
   rectMode(CENTER);
+  minim=new Minim(this);
+  theme=minim.loadFile("Call_of_Duty_World_at_War_-_Black_Cats_Remix.mp3");
 }
 void draw() {
 
