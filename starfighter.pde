@@ -57,7 +57,34 @@ class Starfighter extends GameObject {
       objects.add(new bullet( 10, 0));
       objects.add(new bullet(-10, 0));
     }
+    while (i<objects.size()) {
+      GameObject obj=objects.get(i);
+      if (obj instanceof bullet) {
+        if (collidingWith(obj)) {
+          lives--;
+          obj.lives = 0;
+        }
+        i++;
+      }
+    }
   }
+
+  int get_nearest() {
+    int idx = -1;                               
+    tdist = displayWidth;                              
+    for (int i = 0; i < points.size(); i++) {
+      targetnewdist = dist(points.get(i).x, points.get(i).y, target.x, target.y);
+      if ( targetnewdist < tdist ) { 
+        tdist = newdist; 
+        idx = i;
+      }
+    }
+    return idx;
+  }}
+
+
+
+
   void show() {
     fill(c);
     square(x, y, size);

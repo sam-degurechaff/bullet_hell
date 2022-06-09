@@ -24,6 +24,23 @@ class eneimy extends GameObject {
     }
     if (offScreen()) {
       lives=0;
+
+      if (lives==0) {
+        lives=1;
+        threshold=600;
+        cooldown=threshold;
+        x=x;
+        y=y-5;
+        if (vy>-5) {
+          c=blue;
+          vy--;
+        };
+        size=1;
+      } else {
+
+        y=y+11;
+        size=size+random(1, 5);
+      }
     }    
     //col
     int i=0; 

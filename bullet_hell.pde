@@ -23,6 +23,7 @@ color blue=#f1faee;
 color yellow=#fdca40;
 
  float emx,emy;
+ float speedof,tdist, targetdist=.04;
    
 int mode;
 ArrayList<GameObject> objects;
