@@ -72,15 +72,41 @@ class Starfighter extends GameObject {
   int get_nearest() {
     int idx = -1;                               
     tdist = displayWidth;                              
-    for (int i = 0; i < points.size(); i++) {
-      targetnewdist = dist(points.get(i).x, points.get(i).y, target.x, target.y);
+    for (int i = 0; i < objects.size(); i++) {
+      targetnewdist = dist(objects.get(i).x, objects.get(i).y, player1.x, player.y);
       if ( targetnewdist < tdist ) { 
         tdist = newdist; 
         idx = i;
       }
     }
     return idx;
-  }}
+  }
+
+  //void rear gunner() {
+  //  if (objects.y>player1.y) {                                  
+  //      fill(255);
+  //      ellipse(target.x, target.y, 2*k, 2*k);       
+  //      k++;
+  //      if ( k >= kmax ) {  
+  //        shoot = false; 
+  //        k = 0;
+  //      }
+  //    }
+  //  }
+
+  //void rear gunner target() {
+  //  if ( idt > -1 ) 
+  //    PVector waytotarget = objects.get(idt).copy();
+  //  waytotarget.sub(target);
+  //  if ( waytotarget.mag() > 0.5 ) {                     // thats close enough
+  //    waytotarget.setMag(waytotarget.mag()*speedf);      // calc faster to short step in that direction
+  //    target = target.add(waytotarget);                  // change target
+  //  } else {
+  //    if ( !shoot ) println("shoot at "+idt);            // only print 
+  //    shoot = true;
+  //    points.remove(idt);
+  //  }
+  //}
 
 
 

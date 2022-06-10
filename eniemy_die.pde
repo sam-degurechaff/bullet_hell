@@ -1,7 +1,7 @@
 class eneimyDie extends GameObject {
 
 
-  eneimyDie() {
+  eneimyDie(float x, float y) {
     super(x, y, 0, 0, 40, blue, 1);
    
   }

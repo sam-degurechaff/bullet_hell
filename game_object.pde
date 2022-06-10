@@ -1,7 +1,9 @@
 class GameObject {
+  
   float x, y, vx, vy, size;
   color c;
   int lives;
+  
   GameObject(float x, float y, float vx, float vy, float size, color c, int lives) {
     this.x=x;
     this.y=y;

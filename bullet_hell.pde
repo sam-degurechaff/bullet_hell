@@ -8,6 +8,12 @@ import ddf.minim.ugens.*;
 Minim minim;
 AudioPlayer theme, gametheme, gametheme02, coin, bump, gameover, coin02;
 
+int idt;
+ArrayList<PVector> points = new ArrayList<PVector>();    
+PVector target = new PVector(0, 0);                     
+boolean shoot = false;
+
+boolean timer;
 
 
 final int INTRO=0;
