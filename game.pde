@@ -13,8 +13,11 @@ void addObject() {
   objects.add(new AR());
   if (frameCount%5==0)
     objects.add(new eneimy());
-    if (frameCount%12==0)
+    if (frameCount%30==0)
     objects.add(new aa_eneimy());
+    if (frameCount%60==0)
+    objects.add(new fcarrier());
+
 }
 
 void gameEngine() {  

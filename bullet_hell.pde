@@ -14,6 +14,7 @@ PVector target = new PVector(0, 0);
 boolean shoot = false;
 
 boolean timer;
+float targetnewdist,newdist;
 
 
 final int INTRO=0;
@@ -22,11 +23,14 @@ final int GAMEOVER=2;
 final int PAUSE=3; 
 final int OPTIONS=4;
 boolean wkey, skey, akey, dkey, spacekey;
+float carrierdist;
 
 color red=#e63946;
 color dblue=#1d3557;
 color blue=#f1faee;
 color yellow=#fdca40;
+color purple=#C303FF;
+color green=#77FF03;
 
  float emx,emy;
  float speedof,tdist, targetdist=.04;

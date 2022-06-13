@@ -1,20 +1,24 @@
-class aa_eneimy extends GameObject {
+class fcarrier extends GameObject {
   int cooldown, threshold;
+  float r;
+  fcarrier() {
 
-  aa_eneimy() {
-    super(random(width), 0, 0, 5, 40, green, 1);
 
-    threshold=28;
+    super(random(width), 0, 0, 5, 40, purple, 40);
+    r=random(-50, 50);
+
+    threshold=16;
     cooldown=threshold;
   }
-
   void act() {
     super.act();
-
+    println(vx, vy);
+    emx=x;
+    emy=y;
     //fire
     cooldown++;
     if (cooldown>=threshold) { 
-      objects.add(new aam(x, y));
+      objects.add(new fighterCarrierFire(x, y, 0, 6));
       cooldown=0;
     }
     if (offScreen()) {
@@ -49,6 +53,18 @@ class aa_eneimy extends GameObject {
       }
       i++;
     }
-    if (offScreen()) lives=0;
+    if (offScreen()) {
+      lives=0;
+    }
+
+    if (r<-10&&y>=300) {
+      vy=0;
+    }
+    if (r>-9&&r<10||y>=600) {
+      vy=0;
+    }
+    if (r>10&&y>=600) {
+      vy=0;
+    }
   }
 }

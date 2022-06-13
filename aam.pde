@@ -1,7 +1,7 @@
 class aam extends GameObject {
-  
+
   int timer;
-  
+
   aam( float x, float y) {
     super(x, y, 7, 7, 12, #FF0000, 1);
   }
@@ -20,8 +20,8 @@ class aam extends GameObject {
     if (player1.y>y) {
       vy++;
     }
-    
-    if(lives==1) {
+
+    if (lives==1) {
       timer=80;
       text(timer, 3*width/4, 550); 
       timer=timer-1;
@@ -29,5 +29,17 @@ class aam extends GameObject {
     if (timer==0) {
       lives=0;
     }
-  }
+  
+
+  //while (i<objects.size()) {
+  //  GameObject obj=objects.get(i);
+  //  if (obj instanceof aam) {
+  //    if (collidingWith(player1)) {
+  //      lives--;
+  //      obj.lives = 0;
+  //    }
+  //  }
+  //  i++;
+  //}
+}
 }

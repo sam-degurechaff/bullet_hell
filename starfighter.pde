@@ -73,7 +73,7 @@ class Starfighter extends GameObject {
     int idx = -1;                               
     tdist = displayWidth;                              
     for (int i = 0; i < objects.size(); i++) {
-      targetnewdist = dist(objects.get(i).x, objects.get(i).y, player1.x, player.y);
+      targetnewdist = dist(objects.get(i).x, objects.get(i).y, player1.x, player1.y);
       if ( targetnewdist < tdist ) { 
         tdist = newdist; 
         idx = i;
