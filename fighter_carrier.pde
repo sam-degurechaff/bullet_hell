@@ -4,7 +4,7 @@ class fcarrier extends GameObject {
   fcarrier() {
 
 
-    super(random(width), 0, 0, 5, 40, purple, 40);
+    super(random(width), 0, 0, 3, 40, purple, 40);
     r=random(-50, 50);
 
     threshold=16;
@@ -12,7 +12,7 @@ class fcarrier extends GameObject {
   }
   void act() {
     super.act();
-    println(vx, vy);
+   
     emx=x;
     emy=y;
     //fire

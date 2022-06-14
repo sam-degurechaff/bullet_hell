@@ -5,16 +5,18 @@ class fighterCarrierFire extends GameObject {
     super(_x, _y, _vx, _vy, 10, purple, 1);
 
     if (player1.x>x) {
-      vx=5;
-    }
-    if (player1.x<x) {
-      vx=-5;
-    }
-    if (player1.y>y) {
-      vy=5;
-    }
-    if (player1.y<y) {
-      vy=-5;
+      println("a");
+      _vx++;
+    }else if (player1.x<x) {
+      println("b");
+      _vx--;
+    }else if (player1.y>y) {
+      println("c");
+      _vy++;
+      
+    }else if (player1.y<y) {
+      println("d");
+      _vy--;
     }
   }
 
@@ -25,8 +27,29 @@ class fighterCarrierFire extends GameObject {
       lives=0;
     }
 
-
-    //    while (i<objects.size()) {
-    //      GameObject obj=objects.get(i);
+    //if (player1.x>x) {
+    //  println("a");
+    //  vx++;
+    //  vy++;
+    //}
+    //if (player1.x<x) {
+    //  println("b");
+    //  vx--;
+    //  vy--;
+    //}
+    //if (player1.y>y) {
+    //  println("c");
+    //  vy++;
+    //  vx++;
+    //}
+    //if (player1.y<y) {
+    //  println("d");
+    //  vy--;
+    //  vx--;
+    //}
   }
+
+
+  //    while (i<objects.size()) {
+  //      GameObject obj=objects.get(i);
 }

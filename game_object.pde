@@ -22,7 +22,7 @@ class GameObject {
   void show() {
     fill(c);
     square(x, y, size);
-    println(x, y, vx, vy, size, c, lives);
+   // println(x, y, vx, vy, size, c, lives);
   }
 
   boolean collidingWith(GameObject obj) {

@@ -13,7 +13,7 @@ class eneimy extends GameObject {
   }
   void act() {
     super.act();
-    println(vx, vy);
+    
     emx=x;
     emy=y;
     //fire

@@ -1,5 +1,5 @@
 void keyPressed() {
-  println(wkey,skey,akey,dkey);
+  //println(wkey,skey,akey,dkey);
   if (key=='W'||key=='w')wkey=true;
   if (key=='S'||key=='s')skey=true;
   if (key=='A'||key=='a')akey=true;
