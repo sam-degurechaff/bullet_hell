@@ -23,7 +23,7 @@ final int GAMEOVER=2;
 final int PAUSE=3; 
 final int OPTIONS=4;
 boolean wkey, skey, akey, dkey, spacekey;
-float carrierdist;
+float carrierdist, r, R,dist,ffvx,ffvy,ffba,ffsps,ffsp;
 
 color red=#e63946;
 color dblue=#1d3557;

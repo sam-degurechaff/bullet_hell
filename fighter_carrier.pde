@@ -12,14 +12,24 @@ class fcarrier extends GameObject {
   }
   void act() {
     super.act();
-   
+
+
+
     emx=x;
     emy=y;
     //fire
     cooldown++;
     if (cooldown>=threshold) { 
-      objects.add(new fighterCarrierFire(x, y, 0, 6));
-      cooldown=0;
+      dist = dist(player1.x, player1.y, x, y);
+      if (dist<700) {
+        ffvx=(player1.x-x);
+        ffvy=(player1.y-y);
+        ffba=-atan2(y-player1.y, x-player1.x);
+        ffsp=-sin(ffba)*10;
+        ffsps=-cos(ffba)*10;
+        objects.add(new fighterCarrierFire(x, y, ffsp, ffsps));
+        cooldown=0;
+      }
     }
     if (offScreen()) {
       lives=0;
