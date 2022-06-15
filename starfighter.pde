@@ -1,10 +1,11 @@
 class Starfighter extends GameObject {
 
-  int cooldown, threshold;
+  int cooldown, threshold, timer;
   Starfighter() {
     super(width/2, height/2, 0, 0, 40, #FF0000, 3);
     threshold=6;
     cooldown=threshold;
+    wingman=true;
   }
   void act() {
     //control
@@ -20,7 +21,7 @@ class Starfighter extends GameObject {
     //on board weaponds
     cooldown++;
     if (spacekey&&cooldown>=threshold) { 
-      objects.add(new bullet(0, -10));
+      objects.add(new bullet(x,y,0, -10));
       cooldown=0;
     }
     super.act();
@@ -52,10 +53,10 @@ class Starfighter extends GameObject {
     float dist;
     dist = dist(player1.x, player1.y, emy, emx);
     if (dist<80) {
-      objects.add(new bullet(0, -10));
-      objects.add(new bullet(0, 10));
-      objects.add(new bullet( 10, 0));
-      objects.add(new bullet(-10, 0));
+      //objects.add(new bullet(0, -10));
+      //objects.add(new bullet(0, 10));
+      //objects.add(new bullet( 10, 0));
+      //objects.add(new bullet(-10, 0));
     }
     while (i<objects.size()) {
       GameObject obj=objects.get(i);
@@ -66,6 +67,13 @@ class Starfighter extends GameObject {
         }
         i++;
       }
+    }
+    if (wingman==true) {
+
+      objects.add(new wingman(x, y, vx, vy));
+      wingman=false;
+    }
+    if ( timer==0) {
     }
   }
 

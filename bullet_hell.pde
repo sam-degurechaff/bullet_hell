@@ -13,8 +13,8 @@ ArrayList<PVector> points = new ArrayList<PVector>();
 PVector target = new PVector(0, 0);                     
 boolean shoot = false;
 
-boolean timer;
-float targetnewdist,newdist;
+boolean timer,spawnpw,wingman;
+float targetnewdist,newdist,ffp;
 
 
 final int INTRO=0;

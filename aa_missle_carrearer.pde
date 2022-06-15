@@ -4,7 +4,7 @@ class aa_eneimy extends GameObject {
   aa_eneimy() {
     super(random(width), 0, 0, 5, 40, green, 1);
 
-    threshold=28;
+    threshold=120;
     cooldown=threshold;
   }
 
@@ -16,6 +16,11 @@ class aa_eneimy extends GameObject {
     if (cooldown>=threshold) { 
       objects.add(new aam(x, y));
       cooldown=0;
+    }
+    if (cooldown==100||cooldown<84&&cooldown>76||cooldown<60&&cooldown>52||cooldown<38&&cooldown>26||cooldown<18) {
+      c=red;
+    } else {
+      c=green;
     }
     if (offScreen()) {
       lives=0;

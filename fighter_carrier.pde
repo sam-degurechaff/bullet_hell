@@ -1,12 +1,11 @@
 class fcarrier extends GameObject {
   int cooldown, threshold;
-  float r;
+  float r, ffpw;
   fcarrier() {
-
 
     super(random(width), 0, 0, 3, 40, purple, 40);
     r=random(-50, 50);
-
+    ffpw=11;
     threshold=16;
     cooldown=threshold;
   }
@@ -75,6 +74,20 @@ class fcarrier extends GameObject {
     }
     if (r>10&&y>=600) {
       vy=0;
+    }
+    if (lives==28) {
+      ffp=random(-600, 600) ;
+      x=x-ffp;
+      lives=lives-1;
+    }
+    if (lives==0) {
+      ffpw=random(0, 10);
+    }
+    if (ffpw<4) {
+      spawnpw=true;
+      objects.add(new spawnpw(x, y));
+    } else {
+      spawnpw=false;
     }
   }
 }
