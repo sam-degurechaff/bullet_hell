@@ -1,6 +1,6 @@
-class spawnpw extends GameObject {
+class spawnHP extends GameObject {
   int timer;
-  spawnpw(float x, float y) {
+  spawnHP(float x, float y) {
     super(x, y, 0, 3, 20, gray, 1);
     timer=200;
   }

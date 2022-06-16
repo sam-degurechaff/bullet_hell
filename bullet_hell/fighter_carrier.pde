@@ -86,13 +86,21 @@ class fcarrier extends GameObject {
     if (ffpw<4&&ffpw>2) {
       spawnpw=true;
       objects.add(new spawnpw(x, y));
+    } else if 
+      (ffpw<2) {
+      spawnHP=true;
+      objects.add(new spawnHP(x, y));
     } else {
       spawnpw=false;
-    } else if { 
-      (ffpw<2) {
-        spawnpHP=true;
-        objects.add(new spawnHP(x, y));
-      }
+      spawnHP=false;
     }
+  }
+  {
+  }
+  {
+  }
+  {
+  }
+  {
   }
 }

@@ -1,11 +1,12 @@
 class Starfighter extends GameObject {
 
-  int cooldown, threshold, timer;
+  int cooldown, threshold, timer, life;
   Starfighter() {
     super(width/2, height/2, 0, 0, 40, #FF0000, 3);
     threshold=6;
     cooldown=threshold;
-    wingman=true;
+    fullhealth=false;
+    life=3;
   }
   void act() {
     //control
@@ -17,7 +18,7 @@ class Starfighter extends GameObject {
 
     if (!akey && !dkey)vx=vx*0.9;
     if (!wkey && !skey)vy=vy*.9;
-text(live,width/2,100);
+    text(life, width/2, 100);
     //on board weaponds
     cooldown++;
     if (spacekey&&cooldown>=threshold) { 
@@ -75,8 +76,17 @@ text(live,width/2,100);
       wingman=false;
     }
     if (fullhealth==true) {
-      live=10;
-      fullhealth==false;
+      life=10;
+      fullhealth=false;
+    }
+    if (x<0+40) {
+      x=width+40;
+    } else if (x>width-40) {
+      x=width-40;
+    } else if (y<0+40) {
+      y=0+40;
+    } else if (y>height-40) {
+      y=height-40;
     }
   }
 
@@ -92,6 +102,7 @@ text(live,width/2,100);
     }
     return idx;
   }
+
 
   //void rear gunner() {
   //  if (objects.y>player1.y) {                                  
@@ -119,11 +130,7 @@ text(live,width/2,100);
   //  }
   //}
 
-
-
-
-  void show() {
-    fill(c);
-    square(x, y, size);
-  }
-}
+void show() {
+  fill(c);
+  square(x, y, size);
+}}
