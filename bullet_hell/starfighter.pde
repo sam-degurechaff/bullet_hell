@@ -88,49 +88,49 @@ class Starfighter extends GameObject {
     } else if (y>height-40) {
       y=height-40;
     }
-  }
-
-  int get_nearest() {
-    int idx = -1;                               
-    tdist = displayWidth;                              
-    for (int i = 0; i < objects.size(); i++) {
-      targetnewdist = dist(objects.get(i).x, objects.get(i).y, player1.x, player1.y);
-      if ( targetnewdist < tdist ) { 
-        tdist = newdist; 
-        idx = i;
-      }
-    }
-    return idx;
-  }
 
 
-  //void rear gunner() {
-  //  if (objects.y>player1.y) {                                  
-  //      fill(255);
-  //      ellipse(target.x, target.y, 2*k, 2*k);       
-  //      k++;
-  //      if ( k >= kmax ) {  
-  //        shoot = false; 
-  //        k = 0;
-  //      }
-  //    }
-  //  }
+//    void distance() {
+//      int i=0;
+//      int index == 0 {
+//        while (i<objects.length()) {
+//          GameObject obj=objects.get(i);
+//          i++;
+//          (float minimum_distance=(player1.x, player1.y, objects.x, objects.y) {
+//else if (objects[index][i] <= 700) {
+//}
+//}
+//void rear_gunner() {
+//  dist = dist(player1.x, player1.y, objects.x, objects.y);
+//  if (cooldown>=threshold||dist<700) { 
+//    ffvx=(x-player1.x);
+//    ffvy=(y-player1.y);
+//    ffba=-atan2(player1.y-y, player1.x-x);
+//    gnsp=-sin(ffba)*10;
+//    gnsps=-cos(ffba)*10;
+//    objects.add(new gunnerfire(x, y, ffsp, ffsps));
+//    cooldown=0;
+//  }
+//}
+//}
+}
 
-  //void rear gunner target() {
-  //  if ( idt > -1 ) 
-  //    PVector waytotarget = objects.get(idt).copy();
-  //  waytotarget.sub(target);
-  //  if ( waytotarget.mag() > 0.5 ) {                     // thats close enough
-  //    waytotarget.setMag(waytotarget.mag()*speedf);      // calc faster to short step in that direction
-  //    target = target.add(waytotarget);                  // change target
-  //  } else {
-  //    if ( !shoot ) println("shoot at "+idt);            // only print 
-  //    shoot = true;
-  //    points.remove(idt);
-  //  }
-  //}
+//void rear gunner target() {
+//  if ( idt > -1 ) 
+//    PVector waytotarget = objects.get(idt).copy();
+//  waytotarget.sub(target);
+//  if ( waytotarget.mag() > 0.5 ) {                     // thats close enough
+//    waytotarget.setMag(waytotarget.mag()*speedf);      // calc faster to short step in that direction
+//    target = target.add(waytotarget);                  // change target
+//  } else {
+//    if ( !shoot ) println("shoot at "+idt);            // only print 
+//    shoot = true;
+//    points.remove(idt);
+//  }
+//}
 
 void show() {
   fill(c);
   square(x, y, size);
-}}
+}
+}

@@ -14,7 +14,7 @@ PVector target = new PVector(0, 0);
 boolean shoot = false;
 
 boolean timer,spawnpw,wingman,spawnHP,fullhealth;
-float targetnewdist,newdist,ffp;
+float targetnewdist,newdist,ffp,gnsp,gnsps;
 
 
 final int INTRO=0;
