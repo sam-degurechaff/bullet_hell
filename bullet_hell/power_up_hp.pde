@@ -1,7 +1,7 @@
 class spawnHP extends GameObject {
   int timer;
   spawnHP(float x, float y) {
-    super(x, y, 0, 3, 20, gray, 1);
+    super(x, y, 0, 3, 20, red, 1);
     timer=200;
   }
   void act() {

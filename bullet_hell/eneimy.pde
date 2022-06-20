@@ -8,12 +8,12 @@ class eneimy extends GameObject {
 
 
 
-    threshold=16;
+    threshold=30;
     cooldown=threshold;
   }
   void act() {
     super.act();
-    
+
     emx=x;
     emy=y;
     //fire
@@ -50,6 +50,12 @@ class eneimy extends GameObject {
         if (collidingWith(obj)) {
           lives--;
           obj.lives = 0;
+
+          int k = 0;
+          while (k < 10) {
+            objects.add(new eneimyDie(x, y, random(-10, 10), random(-10, 10)));
+            k++;
+          }
         }
       }
       i++;

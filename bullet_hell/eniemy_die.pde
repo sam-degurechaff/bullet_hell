@@ -1,25 +1,22 @@
 class eneimyDie extends GameObject {
-
-
-  eneimyDie(float x, float y) {
-    super(x, y, 0, 0, 40, blue, 1);
-   
+int timer=300;
+int lives=1;
+  eneimyDie(float x, float y, float vx, float vy) {
+    super(x, y, vx, vy,10, blue, 1);
   }
   void act() {
-     super.act();
-    x=emx;
-    y=emy;
-    if (lives==0) {
-      if (lives==0) {
-        lives=1;
+    super.act();
+println(vx );
+if (lives==1) {
 
-        x=x;
-        y=y-5;
-        if (vy>-5) {
-          c=blue;
-          vy--;
-        }
-      }
+      text(timer, width/3, 550); 
+      timer=timer-1;
     }
+    if (timer==0) {
+      lives=0;
+    }
+
+
+    if (offScreen()) lives=0;
   }
 }
