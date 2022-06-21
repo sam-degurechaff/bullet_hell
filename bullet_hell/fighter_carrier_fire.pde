@@ -13,7 +13,7 @@ class fighterCarrierFire extends GameObject {
     //}else if (player1.y>y) {
     //  println("c");
     //  _vy++;
-      
+
     //}else if (player1.y<y) {
     //  println("d");
     //  _vy--;

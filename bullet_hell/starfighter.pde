@@ -1,6 +1,6 @@
 class Starfighter extends GameObject {
 
-  int cooldown, threshold, timer;
+  int cooldown, threshold, timer, vt_timer;
   Starfighter() {
     super(width/2, height/2, 0, 0, 40, #FF0000, 3);
     threshold=6;
@@ -21,9 +21,10 @@ class Starfighter extends GameObject {
     //on board weaponds
     cooldown++;
     if (spacekey&&cooldown>=threshold) { 
-      objects.add(new bullet(x, y, 0, -10));
+      objects.add(new bullet(x, y, 0, -18));
       cooldown=0;
     }
+    rect(100, 800, 200, 100);
     super.act();
 
 
@@ -34,13 +35,12 @@ class Starfighter extends GameObject {
       if (obj instanceof eneimyFire) {
         if (collidingWith(obj)) {
           lives=lives-1;
-          
         }
       }
       i++;
     }
 
-    
+
 
     float dist;
     dist = dist(player1.x, player1.y, emy, emx);
@@ -50,7 +50,7 @@ class Starfighter extends GameObject {
       //objects.add(new bullet( 10, 0));
       //objects.add(new bullet(-10, 0));
     }
-   
+
     if (wingman==true) {
 
       objects.add(new wingman(x+60, y+10, vx, vy));
@@ -61,6 +61,24 @@ class Starfighter extends GameObject {
       lives=10;
       fullhealth=false;
     }
+    if (vt_timer==0 &&spacekey &&cooldown>=threshold &&mouseX>100 &&mouseX<500 &&mouseY>800 &&mouseY<800) { 
+
+      hevt=true;
+      timer=4000;
+      objects.add(new hevt(x, y, 0, -22));
+      cooldown=0;
+      timer--;
+    }
+    if (hevt==true) {
+      rect(x, y, 20, 200);
+    }
+    if (timer==0) {
+
+      hevt=false;
+      vt_timer=10000;
+      vt_timer--;
+    }
+
     if (x<0+40) {
       x=width+40;
     } else if (x>width-40) {

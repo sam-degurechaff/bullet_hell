@@ -13,11 +13,10 @@ void addObject() {
   objects.add(new AR());
   if (frameCount%5==0)
     objects.add(new eneimy());
-    if (frameCount%80==0)
+  if (frameCount%80==0)
     objects.add(new aa_eneimy());
-    if (frameCount%300==0)
+  if (frameCount%300==0)
     objects.add(new fcarrier());
-
 }
 
 void gameEngine() {  
@@ -46,7 +45,7 @@ void gameClicks() {
 
 void playSound() {
 
-   {
+  {
     theme.play();
   }
 }

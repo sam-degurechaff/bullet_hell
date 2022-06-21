@@ -95,12 +95,4 @@ class fcarrier extends GameObject {
       spawnHP=false;
     }
   }
-  {
-  }
-  {
-  }
-  {
-  }
-  {
-  }
 }
