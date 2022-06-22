@@ -23,7 +23,7 @@ final int GAMEOVER=2;
 final int PAUSE=3; 
 final int OPTIONS=4;
 boolean wkey, skey, akey, dkey, spacekey,powerw1,powerh2;
-float carrierdist, r, R,dist,ffvx,ffvy,ffba,ffsps,ffsp;
+float carrierdist, r, R,dist,ffvx,ffvy,ffba,ffsps,ffsp, highscore,score,lives;
 
 color red=#e63946;
 color dblue=#1d3557;
@@ -42,7 +42,7 @@ ArrayList<GameObject> objects;
 Starfighter player1;
 void setup() {
   size(displayWidth, displayHeight); 
-  mode=GAME;
+  mode=INTRO;
   objects=new ArrayList<GameObject>();
   player1=new Starfighter();
   rectMode(CENTER);

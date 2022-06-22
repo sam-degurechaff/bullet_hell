@@ -2,7 +2,7 @@ class Starfighter extends GameObject {
 
   int cooldown, threshold, timer, vt_timer;
   Starfighter() {
-    super(width/2, height/2, 0, 0, 40, #FF0000, 3);
+    super(width/2, height/2, 0, 0, 40, #FF0000, 10000);
     threshold=6;
     cooldown=threshold;
     fullhealth=false;
@@ -35,6 +35,7 @@ class Starfighter extends GameObject {
       if (obj instanceof eneimyFire) {
         if (collidingWith(obj)) {
           lives=lives-1;
+        } else {
         }
       }
       i++;
@@ -58,7 +59,7 @@ class Starfighter extends GameObject {
       wingman=false;
     }
     if (fullhealth==true) {
-      lives=10;
+      lives=lives+10;
       fullhealth=false;
     }
     if (vt_timer==0 &&spacekey &&cooldown>=threshold &&mouseX>100 &&mouseX<500 &&mouseY>800 &&mouseY<800) { 
@@ -77,6 +78,11 @@ class Starfighter extends GameObject {
       hevt=false;
       vt_timer=10000;
       vt_timer--;
+    }
+    if (lives<=0) {
+      mode=GAMEOVER;
+      //gameover.rewind();
+      //gameover.play();
     }
 
     if (x<0+40) {

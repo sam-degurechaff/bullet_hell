@@ -33,6 +33,7 @@ void gameEngine() {
   }
   player1.show();
   player1.act();
+
 }
 
 void debug() { 
